@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dq3-s4-6qR" customClass="DrawCanvas">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ogM-2V-UD7">
+                                        <rect key="frame" x="60" y="83" width="480" height="29"/>
+                                        <color key="backgroundColor" red="0.60435888780000002" green="0.68230341049999998" blue="0.76270517680000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="Black"/>
+                                            <segment title="Blue"/>
+                                            <segment title="Orange"/>
+                                            <segment title="Red"/>
+                                            <segment title="Wipe"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.0" green="1" blue="0.23237047697368421" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="chooseColour:" destination="BYZ-38-t0r" eventType="valueChanged" id="JUc-Wi-54Q"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.89540501644736847" green="0.99165897550000004" blue="0.93096209925263163" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ogM-2V-UD7" firstAttribute="centerX" secondItem="dq3-s4-6qR" secondAttribute="centerX" id="EUt-pk-g0m"/>
+                                    <constraint firstItem="ogM-2V-UD7" firstAttribute="leading" secondItem="dq3-s4-6qR" secondAttribute="leading" constant="60" id="auA-M9-7Lf"/>
+                                    <constraint firstAttribute="trailing" secondItem="ogM-2V-UD7" secondAttribute="trailing" constant="60" id="lPo-wK-E5g"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dq3-s4-6qR" secondAttribute="trailing" id="71y-Ik-rYa"/>
+                            <constraint firstItem="ogM-2V-UD7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="83" id="8Vh-1L-my3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dq3-s4-6qR" secondAttribute="bottom" id="T0D-fp-FFT"/>
+                            <constraint firstItem="dq3-s4-6qR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n3J-F8-oVf"/>
+                            <constraint firstItem="dq3-s4-6qR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wr0-Bg-8pO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colourPicker" destination="ogM-2V-UD7" id="7nA-0f-G2J"/>
+                        <outlet property="drawingCanvas" destination="dq3-s4-6qR" id="Wyy-4t-7Kc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="375" y="305"/>
         </scene>
     </scenes>
 </document>

@@ -15,6 +15,7 @@
 		9303C0761C52D0C900560FF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9303C0741C52D0C900560FF6 /* LaunchScreen.storyboard */; };
 		9303C0811C52D0C900560FF6 /* FingerPaintApp2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9303C0801C52D0C900560FF6 /* FingerPaintApp2Tests.m */; };
 		9303C08C1C52D0C900560FF6 /* FingerPaintApp2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9303C08B1C52D0C900560FF6 /* FingerPaintApp2UITests.m */; };
+		9303C09B1C52D19800560FF6 /* DrawCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 9303C09A1C52D19800560FF6 /* DrawCanvas.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		9303C0871C52D0C900560FF6 /* FingerPaintApp2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FingerPaintApp2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9303C08B1C52D0C900560FF6 /* FingerPaintApp2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FingerPaintApp2UITests.m; sourceTree = "<group>"; };
 		9303C08D1C52D0C900560FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9303C0991C52D19800560FF6 /* DrawCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCanvas.h; sourceTree = "<group>"; };
+		9303C09A1C52D19800560FF6 /* DrawCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCanvas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				9303C06C1C52D0C900560FF6 /* ViewController.h */,
 				9303C06D1C52D0C900560FF6 /* ViewController.m */,
 				9303C06F1C52D0C900560FF6 /* Main.storyboard */,
+				9303C0991C52D19800560FF6 /* DrawCanvas.h */,
+				9303C09A1C52D19800560FF6 /* DrawCanvas.m */,
 				9303C0721C52D0C900560FF6 /* Assets.xcassets */,
 				9303C0741C52D0C900560FF6 /* LaunchScreen.storyboard */,
 				9303C0771C52D0C900560FF6 /* Info.plist */,
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9303C06E1C52D0C900560FF6 /* ViewController.m in Sources */,
+				9303C09B1C52D19800560FF6 /* DrawCanvas.m in Sources */,
 				9303C06B1C52D0C900560FF6 /* AppDelegate.m in Sources */,
 				9303C0681C52D0C900560FF6 /* main.m in Sources */,
 			);

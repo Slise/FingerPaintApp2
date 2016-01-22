@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "DrawCanvas.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet DrawCanvas *drawingCanvas;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *colourPicker;
+@property (strong, nonatomic) UIColor *currentColour;
+@property (strong, nonatomic) UIBezierPath *currentPath;
 
 @end
 
@@ -16,12 +21,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.drawingCanvas.paths = [[NSMutableArray alloc] init];
+    self.currentColour = [UIColor blackColor];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)chooseColour:(id)sender {
+    if(self.colourPicker.selectedSegmentIndex ==0){
+        self.currentColour = [UIColor blackColor];
+    }else if(self.colourPicker.selectedSegmentIndex ==1){
+        self.currentColour = [UIColor blueColor];
+    }else if(self.colourPicker.selectedSegmentIndex ==2){
+        self.currentColour = [UIColor orangeColor];
+    }else if(self.colourPicker.selectedSegmentIndex ==3){
+        self.currentColour = [UIColor redColor];
+    }else if(self.colourPicker.selectedSegmentIndex ==4){
+        self.drawingCanvas.paths = [[NSMutableArray alloc] init];
+        self.drawingCanvas.pathColours = [[NSMutableArray alloc] init];
+        self.currentColour = [UIColor blackColor];
+        [self.drawingCanvas setNeedsDisplay];
+    }else {
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0, 0.0, 0.0, 0.0);
+    }
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    self.currentPath = [UIBezierPath bezierPathWithRect:CGRectZero];
+    [self.currentPath moveToPoint:[touch locationInView:self.drawingCanvas]];
+    [self.drawingCanvas.paths addObject:self.currentPath];
+    [self.drawingCanvas.pathColours addObject:self.currentColour];
+    [self.drawingCanvas setNeedsDisplay];
+}
+
+-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self touchesEnded:touches withEvent:event];
+}
+
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint touchlocation =[touch locationInView:self.drawingCanvas];
+    [self.currentPath addLineToPoint:touchlocation];
+    [self.drawingCanvas setNeedsDisplay];
 }
 
 @end
