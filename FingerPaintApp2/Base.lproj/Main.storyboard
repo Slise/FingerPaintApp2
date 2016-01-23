@@ -35,13 +35,33 @@
                                             <action selector="chooseColour:" destination="BYZ-38-t0r" eventType="valueChanged" id="JUc-Wi-54Q"/>
                                         </connections>
                                     </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sooper-Awesome Paint App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="que-g6-khK">
+                                        <rect key="frame" x="143.5" y="20" width="313.5" height="47"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="pqc-6q-l2g"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="40"/>
+                                        <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.89540501644736847" green="0.99165897550000004" blue="0.93096209925263163" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="que-g6-khK" firstAttribute="top" secondItem="dq3-s4-6qR" secondAttribute="top" constant="20" id="5sV-k1-OEb"/>
+                                    <constraint firstItem="que-g6-khK" firstAttribute="centerX" secondItem="dq3-s4-6qR" secondAttribute="centerX" id="61F-7W-hTp"/>
                                     <constraint firstItem="ogM-2V-UD7" firstAttribute="centerX" secondItem="dq3-s4-6qR" secondAttribute="centerX" id="EUt-pk-g0m"/>
+                                    <constraint firstItem="que-g6-khK" firstAttribute="leading" secondItem="dq3-s4-6qR" secondAttribute="leading" constant="137" id="MQH-tE-MDW"/>
                                     <constraint firstItem="ogM-2V-UD7" firstAttribute="leading" secondItem="dq3-s4-6qR" secondAttribute="leading" constant="60" id="auA-M9-7Lf"/>
                                     <constraint firstAttribute="trailing" secondItem="ogM-2V-UD7" secondAttribute="trailing" constant="60" id="lPo-wK-E5g"/>
+                                    <constraint firstItem="que-g6-khK" firstAttribute="leading" secondItem="dq3-s4-6qR" secondAttribute="leading" constant="137" id="v2v-BM-mhw"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MQH-tE-MDW"/>
+                                        <exclude reference="v2v-BM-mhw"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
